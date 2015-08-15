@@ -31,13 +31,16 @@ class OwnershipsController < ApplicationController
     # TODO ユーザにwant or haveを設定する
     # params[:type]の値ににHaveボタンが押された時にはの時は「Have」,
     # Wantボタンがされた時には「Want」が設定されています。
-    if params[:type] == "Want"
-      current_user.want(@item_id)
-    end
     
     if params[:type] == "Have"
-      current_user.have(@item_id)
+      current_user.have(@item)
     end
+    
+    if params[:type] == "Want"
+      #binding.pry
+      current_user.want(@item)
+    end
+    
   end
 
   def destroy
@@ -46,14 +49,13 @@ class OwnershipsController < ApplicationController
     # TODO 紐付けの解除。 
     # params[:type]の値ににHavedボタンが押された時にはの時は「Have」,
     # Wantedボタンがされた時には「Want」が設定されています。
-    if params[:type] == "Want"
-      @item = .
-      current_user.unwant(@item)
-    end
     
     if params[:type] == "Have"
-      @item = .
       current_user.unhave(@item)
+    end
+    
+    if params[:type] == "Want"
+      current_user.unwant(@item)
     end
 
   end
