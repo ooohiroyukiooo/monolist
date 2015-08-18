@@ -1,4 +1,4 @@
 <% @items.each do |i| %>
-  <%= i.title %>
-  <%= image_tag(i.get("LargeImage/URL") , alt: i.get('ItemAttributes/Title')) %>
+  <%= i.title %><br />
+  <%= image_tag(i.medium_image) %><br />
 <% end %>
