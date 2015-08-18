@@ -1,6 +1,6 @@
 <% content_for :head do %>
-  title: @user - monolist
-  description: @userのモノページ。@userの欲しいモノ、持っているモノを表示しています。
+  <title><%= @user %> - monolist</title>
+  <meta name="description" content="<%= @user %>のモノページ。@userの欲しいモノ、持っているモノを表示しています。" />
 <% end %>
 
 <div class="user-profile">
